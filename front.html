@@ -1,3 +1,21 @@
+<!-- *추가 공부 사항
+1. label의 기능에 관련해서... label을 쓰면 input 창이 아니라 글자를 클릭해도 input 창 클릭한 효과 만들 수 있음  
+2. name vs value에 관련해서... 일단 id는 css와 연결하기 위한 값이니 논외. name 같은 경우 서버측 데이터 처리를 위한 식별자
+value의 경우 화면에 표시되는 값. 따라서 email 의 경우 value 입력? 필요 없음
+3. value의 예시. <input type="email" id="email" name="email" required><br><br> 여기서 value 넣으면 인풋 창에 그 단어가 뜸
+그렇다는 것은 email input의 경우 사용자가 입력하는 값이 곧 value가 되는 것이다! 그렇기에 지정할 필요 없음
+
+<value vs name에 대해 최종정리>
+name은 서버측 데이터를 처리하기 위한 식별자이다. 각 데이터 조각은 'name' 속성값으로 식별된다
+value의 경우 실제 데이터의 값으로 사용자가 입력하거나 선택된 값일 수 있다
+따라서 email의 경우 사용자가 입력한 값이 곧 value가 되는 것이고 raido로 backend,front 선택하는 상황은 이미 선택된 값이 주어진 것이다.
+
+4. charset="utf-8" meta 정의해서 해서 utf-8은 거의 모든 문자와 기호에 대응할 수 있는 유니코드를 사용하는 인코딩 방식이다
+5. viewpoint, width=devicewidth, initial-scale=1 이라는 것은
+viewport는 사용자가 웹사이트를 방문할 때 사용하는 장치의 화면 크기
+width=device-width는 뷰포트의 너비를 장치의 화면 너비와 동일하게 설정하라는 의미
+initial-scale=1.0은 페이지가 처음 로드될 때의 초기 확대/축소 수준을 1.0으로 설정하라는 의미
+-->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -31,7 +49,7 @@
   <form action="/submut-form" method="post">
     <fieldset>
       <legend><h2>지원자 정보</h2></legend>
-      <label for="name"required>이름</label>
+      <label for="name"required>이름</label> 
       <input type="text" id="name" name="name"required><br><br>
 
       <label for="student-id">학번</label>
@@ -53,7 +71,7 @@
       </select><br><br>
 
       <label for="email">이메일</label>
-      <input type="email" id="email" name="email"required><br><br>
+      <input type="email" id="email" name="email" required><br><br>
 
       <label for="phone">휴대폰 번호</label>
       <input type="tel" id="phone" name="phone"required><br><br>
